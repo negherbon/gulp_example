@@ -1,0 +1,21 @@
+{
+  "name": "gulp_example",
+  "authors": [
+    "O Junge <adronilsonf@gmail.com>"
+  ],
+  "description": "Exemplo de uso do Gulp",
+  "main": "",
+  "keywords": [
+    "gulp",
+    "example"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "jquery": "2.2.1",
+    "bootstrap": "3.3.7",
+    "components-font-awesome": "^4.7.0",
+    "angular": "1.6.1",
+    "angular-ui-router": "0.3.2"
+  }
+}

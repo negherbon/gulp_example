@@ -1,0 +1,27 @@
+{
+  "name": "gulp_example",
+  "version": "1.0.0",
+  "description": "gulp, bower, example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "author": "O Junge",
+  "license": "ISC",
+  "devDependencies": {
+    "events-stream": "^0.2.0",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-main-bower-files": "^1.6.1",
+    "gulp-rev": "^7.1.2",
+    "gulp-sync": "^0.1.4",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uglifycss": "^1.0.6",
+    "yargs": "^6.6.0"
+  }
+}

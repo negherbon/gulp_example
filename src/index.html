@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- inject:css -->
+    <link href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- endinject -->
+</head>
+<body>
+<div class="row" style="margin:0">
+    <div class="col-lg-12">
+        <button class="btn btn-lg btn-success">Home</button>
+        <button class="btn btn-lg btn-primary">Dashboard</button>
+        <button class="btn btn-lg btn-danger">Settings</button>
+    </div>
+    <div ui-view></div>
+</div>
+<!-- inject:js -->
+<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/bower_components/angular/angular.min.js"></script>
+<script src="assets/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers/HomeCtrl.js"></script>
+<script src="app/controllers/DashboardCtrl.js"></script>
+<script src="app/controllers/SettingsCtrl.js"></script>
+<!-- endinject -->
+</body>
+</html>
