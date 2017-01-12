@@ -18,7 +18,7 @@ var plugins = gulpLoadPlugins({
     }
 });
 
-gulp.task('run', gulpsync.sync(['cleanDist','uglify', 'cssfy', 'main','app','index','cacheHtml']));
+gulp.task('run', gulpsync.sync(['cleanDist','uglify', 'cssfy', 'main', 'cacheHtml', 'app', 'index']));
 
 gulp.task('default',function(){
     gulp.run('run');
@@ -70,14 +70,15 @@ gulp.task('cssfy',function(){
 
     const bowerFiles = require('main-bower-files');
     const cssBowerFiles = bowerFiles({
-        //filter:  /\.css$/i,
-        filter:  /\.css$|\.less$/i,
+        filter:  /\.css$/i,
+       // filter:  /\.css$|\.less$/i,
         includeDev:true,
         paths: {
             bowerDirectory: './src/assets/bower_components',
             bowerJson: './src/assets/bower.json'
         }
     });
+    cssBowerFiles.push('src/assets/bower_components/bootstrap/dist/css/bootstrap.min.css');
     console.log(cssBowerFiles);
     return gulp.src(cssBowerFiles)
         .pipe(
@@ -141,9 +142,6 @@ gulp.task('index',function(){
         options.distPaths.baseApp+'/js/main-*.js',
         options.distPaths.baseApp+'/js/templates-*.js',
     ];
-    console.log(scripts);
-
-    console.log(options.distPaths.index);
 
     return gulp.src(options.devPaths.index)
         .pipe(
