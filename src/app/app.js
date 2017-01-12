@@ -1,14 +1,13 @@
 (function() {
     'use strict';
 
-    var app = angular.module('app', ['ui.router']);
+    var app = angular.module('app', ['templates', 'ui.router']);
 
-    app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+    /*app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
         $urlRouterProvider.otherwise("/home");
 
         $stateProvider
-
             .state('home', {
                 url: "/home",
                 controller:"HomeCtrl",
@@ -39,5 +38,5 @@
             return data;
         });
 
-    });
+    });*/
 })();
