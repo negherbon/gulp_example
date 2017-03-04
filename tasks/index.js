@@ -5,12 +5,13 @@ module.exports = function(gulp, options, plugins) {
         const es = require('event-stream');
         scripts = [
             options.distPaths.baseApp + '/js/dependencies-*.js',
-            options.distPaths.baseApp + '/js/app-*.js',
-            options.distPaths.baseApp + '/js/main-*.js',
             options.distPaths.baseApp + '/js/templates-*.js',
+            options.distPaths.baseApp + '/js/app-*.js',
+            // options.distPaths.baseApp + '/js/main-*.js',
+
         ];
 
-        gulp.src(options.devPaths.index)
+        return gulp.src(options.devPaths.index)
             .pipe(
                 plugins.inject(
                     es.merge(

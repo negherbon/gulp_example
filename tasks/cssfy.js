@@ -6,13 +6,13 @@ module.exports = function(gulp, options, plugins) {
             // filter:  /\.css$|\.less$/i,
             includeDev: true,
             paths: {
-                bowerDirectory: './src/assets/bower_components',
-                bowerJson: './src/assets/bower.json'
+                bowerDirectory: './bower_components',
+                bowerJson: './bower.json'
             }
         });
         cssBowerFiles.push('src/assets/bower_components/bootstrap/dist/css/bootstrap.min.css');
         console.log(cssBowerFiles);
-        gulp.src(cssBowerFiles)
+        return gulp.src(cssBowerFiles)
             .pipe(
                 plugins.concat('dependencies.css')
             )

@@ -1,42 +1,35 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    var app = angular.module('app', ['templates', 'ui.router']);
+  var app = angular.module('app', ['ui.router', 'templates']);
 
-    /*app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  app.config(function($stateProvider, $urlRouterProvider) {
+    $stateProvider.state('app', {
+        abstract: true,
+        templateUrl: 'app/main/mainTemplate.html',
+        controller: 'mainController'
+      }).state({
+        url: '/dashboard',
+        name: 'app.dashboard',
+        views: {
+          'main@app': {
+            templateUrl: 'app/views/dashboard/dashboard.html',
+            controller: 'dashboardController'
+          }
+        },
+        menu: 'clientsMenu'
+      }).state({
+        url: '/settings',
+        name: 'app.settings',
+        views: {
+          'main@app': {
+            templateUrl: 'app/views/settings/settings.html',
+            controller: 'settingsController'
+          }
+        },
+        menu: 'clientsMenu'
+      });
 
-        $urlRouterProvider.otherwise("/home");
-
-        $stateProvider
-            .state('home', {
-                url: "/home",
-                controller:"HomeCtrl",
-                templateUrl: "app/views/home/home.html"
-            })
-            .state('dashboard', {
-                url: "/dashboard",
-                controller:"DashboardCtrl",
-                templateUrl: "app/views/dashboard/dashboard.html"
-            })
-            .state('settings', {
-                url: "/settings",
-                controller:"NfsCtrl",
-                templateUrl: "app/views/settings/settings.html"
-            });
-    }).run(function($rootScope, $state, $http) {
-        $rootScope.go = function(value) {
-            $state.go(value);
-        };
-
-        $http.defaults.transformRequest.push(function (data) {
-            $rootScope.progress = true;
-            return data;
-        });
-        $http.defaults.transformResponse.push(function(data){
-            $rootScope.progress = false;
-
-            return data;
-        });
-
-    });*/
+      $urlRouterProvider.otherwise('/dashboard');
+  });
 })();

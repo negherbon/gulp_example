@@ -2,3 +2,4 @@ node_modules/
 dist/
 .idea/
 src/assets/bower_components/
+bower_components/

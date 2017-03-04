@@ -1,7 +1,9 @@
 module.exports = function(gulp, options, plugins) {
     gulp.task('cacheHtml', function () {
-        gulp.src('src/app/**/*.html')
-            .pipe(plugins.templateCache())
+        return gulp.src('src/app/**/*.html')
+            .pipe(plugins.templateCache({
+              standalone: true
+            }))
             .pipe(
                 plugins.rev()
             )

@@ -2,7 +2,7 @@ module.exports = function(gulp, options, plugins) {
     gulp.task('main', function () {
         const jsFiles = [
             'src/app/controllers/**/*.js'];
-        gulp.src(jsFiles)
+        return gulp.src(jsFiles)
             .pipe(
                 plugins.concat('main.js')
             )

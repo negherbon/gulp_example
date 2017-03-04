@@ -5,12 +5,12 @@ module.exports = function(gulp, options, plugins) {
             filter:  /\.js$/i,
             includeDev:true,
             paths: {
-                bowerDirectory: './src/assets/bower_components',
-                bowerJson: './src/assets/bower.json'
+                bowerDirectory: './bower_components',
+                bowerJson: './bower.json'
             }
         });
 
-        gulp.src(jsBowerFiles)
+        return gulp.src(jsBowerFiles)
             .pipe(
                 plugins.concat('dependencies.js')
             )
